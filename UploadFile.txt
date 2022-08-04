@@ -13,7 +13,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.base.Base_Class;
 
 public class Uploading extends Base_Class {
@@ -28,8 +27,6 @@ public class Uploading extends Base_Class {
 	@Test
 		public void uploadAFile() throws AWTException, InterruptedException {
 			
-		Robot robo = new Robot();
-				
 		webPage("http://www.google.co.in/imghp?hl=en&ogbl");
 		WebElement search = driver.findElement(By.xpath("(//div[@role='button'])[2]"));
 		clickOnElement(search);
@@ -45,6 +42,7 @@ public class Uploading extends Base_Class {
 		StringSelection path =  new StringSelection(file);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(path, null);
 		
+		Robot robo = new Robot();
 		robo.keyPress(KeyEvent.VK_CONTROL);
 		robo.keyPress(KeyEvent.VK_V);
 		robo.keyRelease(KeyEvent.VK_V);
